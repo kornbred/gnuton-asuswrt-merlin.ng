@@ -1,0 +1,65 @@
+--- # YAML format
+reference: '$File: //depot/CommEngine/patches/CustomBranches/Asustek/5.04L.04_P3/patch.version $'
+version: '5'
+release: '04'
+extraversion: '04p3'
+
+platforms_in_use:
+# one row per platform starting with hiphen+space e.g. - 63138                     
+- 6813                                                                             
+- 6765                                                                             
+- 6766                                                                             
+- 6764
+
+patches:
+# one row per patch starting with hiphen+space e.g.:
+- {csp: CSxx, ref: RNxx, chg: CLxx} # Mandatory Comment
+
+- {csp: CS00012346734, ref: SWBCACPE-60237, chg: CL498688} # [PP_XPM 6765/66] Defer skb linking to Rx processing instead of rxfill.   
+- {csp: CS00012346734, ref: SWBCACPE-59221, chg: CL498695} # [EDPD] Add support for MLO capable AP's   
+- {csp: CS00012346734, ref: SWBCACPE-60260, chg: CL498857} # [Crossbow] LLC/SNAP Header insertion for WLAN NIC Transmission   
+- {csp: CS00012346734, ref: SWBCACPE-60264, chg: CL498859} # delete LLCSNAP insertion in pktfwd if wfd/archer can support LLCSNAP insertion (wl/shared)   
+- {csp: CS00012346734, ref: SWBCACPE-60264, chg: CL498860} # delete LLCSNAP insertion in pktfwd if wfd/archer can support LLCSNAP insertion (bcm_pktfwd.h)   
+- {csp: CS00012346734, ref: SWBCACPE-60329, chg: CL498862} # [Crossbow] Attach FWQ MPM Buffers directly to SKBs   
+- {csp: CS00012346734, ref: SWBCACPE-60324, chg: CL498865} # wl_spc: wlaffinity changes.   
+- {csp: CS00012346734, ref: SWBCACPE-60324, chg: CL498866} # wl_spc: Improvements and design change.   
+- {csp: CS00012346734, ref: SWBCACPE-60324, chg: CL498867} # wl_spc: condition wlaffinity.   
+- {csp: CS00012346734, ref: SWBCACPE-60302, chg: CL498869} # [UNFWLCFG] Fix a type casting issue by including the needed header file nvram_utils.h. This casting issue caused segfault of command "nvram uloadfil
+- {csp: CS00012346734, ref: SWBCACPE-60403, chg: CL498871} # spc: initialize spc fields on clone.   
+- {csp: CS00012346734, ref: SWBCACPE-60377, chg: CL498872} # [DoX] __rdp_drv_dhd_cpu_tx_send_message,1181: DHD_MSG_TYPE_FLOW_RING_CACHE_FLUSH message failed   
+- {csp: CS00012346734, ref: SWBCACPE-60160, chg: CL498873} # [RDK]Bandwindth downgrading from 40Mhz/80Mhz to 20Mhz after EDPD.   
+- {csp: CS00012346734, ref: SWBCACPE-60330, chg: CL498874} # [6765]dol0: Discard TxS: req_id[0x0], pkt[0x0000000000000000] after edpd up   
+- {csp: CS00012346734, ref: SWBCACPE-60260, chg: CL498876} # [Crossbow] LLC/SNAP Header insertion for WLAN NIC Transmission   
+- {csp: CS00012346734, ref: SWBCACPE-59751, chg: CL498877} # [Userspace] Fix compiler warnings in unfnvram   
+- {csp: CS00012346734, ref: SWBCACPE-60383, chg: CL498879} # check clean fails for 64bit eap build profile   
+- {csp: CS00012346734, ref: SWBCACPE-60461, chg: CL498880} # [Userspace][OPENSSL] MODULESDIR should be /lib64 when using 64B and /lib in 32bits mode.   
+- {csp: CS00012346734, ref: SWBCACPE-60455, chg: CL498881} # [DoX] Radio Re-Initialization causes memory leakage   
+- {csp: CS00012346734, ref: SWBCACPE-60511, chg: CL498882} # [DoX] crossbow_fw_dhd_tx_post_cpu_message_processing,1665] ERROR: level = 15903   
+- {csp: CS00012346734, ref: SWBCACPE-60327, chg: CL498883} # CROSSBOW needs crash log   
+- {csp: CS00012346734, ref: SWBCACPE-59976, SWBCACPE-60091, chg: CL498893} # [RDKB][kirkstone-2023q4]build failure-bsp   
+- {csp: CS00012346734, ref: SWBCACPE-60441, chg: CL498896} # Removing error print for buffer allocation failure   
+- {csp: CS00012346734, ref: SWBCACPE-60417, chg: CL498897} # CROSSBOW: Recycling packets immediately to bpm when crossbow sees more than rxq_max_pkts packets from WLAN   
+- {csp: CS00012346734, ref: SWBCACPE-60493, chg: CL498900} # [DoX] crossbow_wlan_tx_pktlist_add_fkb() may free FKBs as SKBs, causing buffer corruption   
+- {csp: CS00012346734, ref: SWBCACPE-59887, SWBCACPE-58679, SWBCACPE-57587, chg: CL498904} # [Kirkstone 2023q4][RDKB ]- kirkstone WLTOB build failure-BSP.   
+- {csp: CS00012346734, ref: SWBCACPE-60431, SWBCACPE-60430, chg: CL498905} # [EDPD][Repeater]wl0.1 bssid is 00:00:00:00:00:00 after edpddn and then edpdup   
+- {csp: CS00012346734, ref: SWBCACPE-60718, chg: CL498907} # [Crossbow] Improve FWQ and STQ interrupt handling   
+- {csp: CS00012346734, ref: SWBCACPE-60718, chg: CL498908} # [Crossbow] Improve FWQ and STQ interrupt handling   
+- {csp: CS00012346734, ref: SWBCACPE-60790, chg: CL498912} # [WLAN/dorel] Fix no such linux-postbuild.sh issue.   
+- {csp: CS00012346734, ref: SWBCACPE-60511, chg: CL498915} # [DoX] crossbow_fw_dhd_tx_post_cpu_message_processing,1665] ERROR: level = 15903   
+- {csp: CS00012329535, ref: SWBCACPE-59921, chg: CL499340} # [BQ16][WAR] add MPM buffer allocation retry for RDD RxPost init failure
+- {csp: CS00012345839, ref: SWBCACPE-61340, chg: CL499671} # fix spu_blog_evict() to avoid IPSec throughput drop on 6764L
+- {csp: CS00012346734, ref: SWBCACPE-61890, chg: CL504654} # 6764, 6765 and 6766 CPU cooling issue
+- {csp: CS00012355816, ref: SWBCACPE-61941, chg: CL505601} # update BCM6766/6765/6764 PMC firmware and BCM thermal driver
+- {csp: CS00012356352, ref: SWBCACPE-62305, chg: CL507844} # [54904][50904] Port link down cause other port link flipping
+- {csp: CS00012355898, ref: SWBCACPE-61627, chg: CL514771} # [6765][IPsec offload]traffic stalls with SVQ block disabled (no license)
+- {csp: CS00012355910, ref: SWBCACPE-62923, chg: CL516996} # add acceleration of SPU US traffic received from WAN interface
+- {csp: CS00012346734, ref: SWBCACPE-57447, chg: CL520116} # bootup failed issue, 2 DUTs cannot boot up into uboot
+- {csp: CS00012346734, ref: SWBCACPE-63656, chg: CL520119} # WAR for MXIC parallel NAND false trigger to mark bad block
+- {csp: CS00012328388, ref: SWBCACPE-54103, chg: CL522209} # [ASUS] Bypass fcache for Wireguard traffic
+- {csp: CS00012227707, ref: SWBCACPE-49992, chg: CL522220} # [JIRA SWBCACPE-49992][Chi-Ting (Angus) Peng] [IPv6] [NAT] Cannot forward ipv6 traffic if setting LAN address as ULA
+- {csp: CS00012366280, ref: SWBCACPE-58727, chg: CL523100} # [50901E]100M link flapping when EEE is enabled
+- {csp: CS00012366280, ref: SWBCACPE-60592, chg: CL523100} # [PHY] Firmware update
+- {csp: CS00012366280, ref: SWBCACPE-60708, chg: CL523103} # [XGPHY][MDIO][BCM67XX/49XX/63XXX/6813] DTSI mdiosf2 block missing label
+- {csp: CS00012366280, ref: SWBCACPE-60898, chg: CL523105} # Third party XGPHY SGMII AN mode support
+- {csp: CS00012374657, ref: SWBCACPE-63776, chg: CL524478} # Support eMMC oops
+- {csp: CS00012400528, ref: SWBCACPE-66199, chg: CL546205} # Router would have hundreds of read at Block 0~6 of flash during boot

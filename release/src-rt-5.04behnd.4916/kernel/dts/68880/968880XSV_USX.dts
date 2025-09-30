@@ -1,0 +1,159 @@
+#include "inc/968880XSV.dtsi"
+
+/ {
+    model = "968880XSV_USX";
+};
+
+/ {
+        memory_controller {
+                memcfg = <(BP1_DDR_MCBSEL_FORMAT_VER1   | \
+                           BP1_DDR_TYPE_LPDDR4         | \
+                           BP1_DDR_SPEED_2133_36_39_39 | \
+                           BP1_DDR_WIDTH_32BIT         | \
+                           BP1_DDR_TOTAL_SIZE_8Gb      | \
+                           BP1_DDR_SSC_CONFIG_1)>;
+        };
+};
+
+&ethphytop {
+    xphy0-enabled;
+    xphy1-enabled;
+};
+
+&mdio_bus {
+    egphy0 {
+        status = "okay";
+    };
+    xphy0 {
+        status = "okay";
+    };
+    xphy1 {
+        status = "okay";
+    };
+    serdes00_xphy {
+        enet-phy-lane-swap;
+        caps-no-10000;
+        caps-no-5000;
+        USXGMII-M;
+        status = "okay";
+    };
+    serdes01_xphy {
+        enet-phy-lane-swap;
+        caps-no-10000;
+        caps-no-5000;
+        USXGMII-M;
+        status = "okay";
+    };
+    serdes02_xphy {
+        enet-phy-lane-swap;
+        caps-no-10000;
+        caps-no-5000;
+        USXGMII-M;
+        status = "okay";
+    };
+    serdes03_xphy {
+        enet-phy-lane-swap;
+        caps-no-10000;
+        caps-no-5000;
+        USXGMII-M;
+        status = "okay";
+    };
+    serdes00 {
+        phy-handle = <&serdes00_xphy>;
+        status = "okay";
+    };
+    serdes01 {
+        phy-handle = <&serdes01_xphy>;
+        status = "okay";
+    };
+    serdes02 {
+        phy-handle = <&serdes02_xphy>;
+        status = "okay";
+    };
+    serdes03 {
+        phy-handle = <&serdes03_xphy>;
+        status = "okay";
+    };
+    serdes10_xphy {
+        enet-phy-lane-swap;
+        caps-no-10000;
+        caps-no-5000;
+        USXGMII-S;
+        status = "okay";
+    };
+    serdes12_xphy {
+        enet-phy-lane-swap;
+        caps-no-10000;
+        caps-no-5000;
+        USXGMII-S;
+        status = "okay";
+    };
+    serdes13_xphy {
+        enet-phy-lane-swap;
+        caps-no-10000;
+        caps-no-5000;
+        USXGMII-S;
+        status = "okay";
+    };
+    serdes10 {
+        phy-handle = <&serdes10_xphy>;
+        status = "okay";
+    };
+    serdes12 {
+        phy-handle = <&serdes12_xphy>;
+        status = "okay";
+    };
+    serdes13 {
+        phy-handle = <&serdes13_xphy>;
+        status = "okay";
+    };
+    wan_ae {
+        trx = <&xfp_sfp>;
+        status = "okay";
+    };
+};
+
+&switch0 {
+    ports {
+        port_gphy0 {
+            status = "okay";
+        };
+        port_xgphy0 {
+            status = "okay";
+        };
+        port_xgphy1 {
+            status = "okay";
+        };
+        port_slan0 {
+            status = "okay";
+        };
+        port_slan1 {
+            status = "okay";
+        };
+        port_slan2 {
+            status = "okay";
+        };
+        port_slan3 {
+            status = "okay";
+        };
+        port_qlan0 {
+            status = "okay";
+        };
+        port_qlan2 {
+            status = "okay";
+        };
+        port_qlan3 {
+            status = "okay";
+        };
+        port_wan@fiber {
+            status = "okay";
+        };
+        port_wan@ae {
+            status = "okay";
+        };
+    };
+};
+
+&phy_wan_serdes {
+    status = "okay";
+};

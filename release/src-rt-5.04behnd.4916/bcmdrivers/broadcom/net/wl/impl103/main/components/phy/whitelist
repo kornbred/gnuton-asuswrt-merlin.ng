@@ -1,0 +1,28 @@
+# Whitelist for PHY_TWIG_17_100_369_39
+#
+# Please add new items at the bottom.
+#
+# Gain approval from your manager before editing this file.
+#
+# format:
+# JIRA:BCAWLAN-xxxxxx <description>
+# Example: JIRA:BCAWLAN-223535 Adding DTPC capability annoucement into sta_info
+#
+
+JIRA:BCAWLAN-260514 [WSD/RFEM] TSSI 2.0 settings
+JIRA:BCAWLAN-260694 [6765A1][6765REF2] TAG369.39 , 5G BW20/40 and BW80 eht13nss1/nss2 CH36 core1 has high EVM floor and hump issue.
+JIRA:BCAWLAN-260971 [RFEM/WSD] Enable tempco so that temperature based TSSI adjustment can happen
+JIRA:BCAWLAN-261006 [FTM/11az] k-value updates for 6765 2.4 GHz band
+JIRA:BCAWLAN-259297 [FTM/11az] k-value needs to be tuned for 6726B1
+JIRA:BCAWLAN-260580 [WiFi-7] phy_refresh
+JIRA:BCAWLAN-261039 [FTM/11AZ] K-value updates for 6716 2G and 6G80/40/20
+JIRA:BCAWLAN-261482 RT-BE86U BCM6711 2G ANT0 RX PER issue (Phy Component)
+JIRA:BCAWLAN-261873 Set lna-pu-pulse radio bit to boost bias (iLNA_pu_pulse) to help maintain LNA bias beyond use of regular circuit
+JIRA:BCAWLAN-261905 [6766-2G][6764-2G] Fix conditioning of the WARENG LNA protection
+JIRA:BCAWLAN-261920 CLONE - PHY FW 802.11az Fix of SLD UL/DL settings for secure-LTF SLTF.
+JIRA:BCAWLAN-262025 [ilna protection] Fix bugs & refine the code
+JIRA:BCAWLAN-261246 [6711] DSSF WAR, Optimize Noise Var Setting for BW20 AX/BE
+JIRA:BCAWLAN-262079 [ilna protection] Change entry threshold for phyrev 0x134
+JIRA:BCAWLAN-262128 [ilna_protection]add option select in SROM (phy)
+
+
