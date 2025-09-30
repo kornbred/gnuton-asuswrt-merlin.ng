@@ -8,25 +8,37 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout destination repo (your fork)
       - name: Checkout destination repo
         uses: actions/checkout@v3
         with:
           ref: master   # explicitly use master for gnuton-asuswrt-merlin.ng
 
+      # Checkout source private repo
       - name: Checkout source private repo
         uses: actions/checkout@v3
         with:
           repository: kornbred/asus-tuf-be3600-src
-          token: ${{ secrets.TUF_BE3600_SECRET }}
-          ref: main    # explicitly use main for asus-tuf-be3600-src
+          token: ${{ secrets.TUF_BE3600_SECRET }}  # personal access token stored as a secret
+          ref: main
           path: src
 
+      # If the SDK needs the GCP service account key
+      - name: Write GCP key to file
+        if: ${{ secrets.GCP_KEY != '' }}
+        run: |
+          mkdir -p /tmp/gcp
+          echo "${{ secrets.GCP_KEY }}" > /tmp/gcp/key.json
+          chmod 600 /tmp/gcp/key.json
+
+      # Copy folder into destination
       - name: Copy folder into destination
         run: |
           mkdir -p release
           rm -rf release/src-rt-5.04behnd.4916 || true
           cp -r src/release/src-rt-5.04behnd.4916 release/
 
+      # Commit and push changes
       - name: Commit and push changes
         run: |
           git config user.name "github-actions"
