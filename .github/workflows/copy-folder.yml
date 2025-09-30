@@ -32,5 +32,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add release/src-rt-5.04behnd.4916
-          git commit -m "Copy src-rt-5.04behnd.4916 from private repo"
+          git commit -m "[skip ci] Copy src-rt-5.04behnd.4916 from private repo"
           git push
