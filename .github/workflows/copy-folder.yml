@@ -1,0 +1,36 @@
+name: Copy Folder from Private Repo
+
+on:
+  workflow_dispatch:
+
+jobs:
+  copy-folder:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout destination repo
+        uses: actions/checkout@v3
+        with:
+          path: dest
+
+      - name: Checkout source private repo
+        uses: actions/checkout@v3
+        with:
+          repository: kornbred/asus-tuf-be3600-src
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: src
+
+      - name: Copy folder into destination
+        run: |
+          mkdir -p dest/release
+          rm -rf dest/release/src-rt-5.04behnd.4916 || true
+          cp -r src/release/src-rt-5.04behnd.4916 dest/release/
+
+      - name: Commit and push changes
+        run: |
+          cd dest
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add release/src-rt-5.04behnd.4916
+          git commit -m "Copy src-rt-5.04behnd.4916 from private repo"
+          git push
