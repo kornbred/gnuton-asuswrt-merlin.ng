@@ -24,12 +24,12 @@ jobs:
           path: src
 
       # If the SDK needs the GCP service account key
-      - name: Write GCP key to file
-        if: ${{ secrets.GCP_KEY != '' }}
-        run: |
-          mkdir -p /tmp/gcp
-          echo "${{ secrets.GCP_KEY }}" > /tmp/gcp/key.json
-          chmod 600 /tmp/gcp/key.json
+      #- name: Write GCP key to file
+        #if: ${{ secrets.GCP_KEY != '' }}
+       # run: |
+        #  mkdir -p /tmp/gcp
+         # echo "${{ secrets.GCP_KEY }}" > /tmp/gcp/key.json
+          #chmod 600 /tmp/gcp/key.json
 
       # Copy folder into destination
       - name: Copy folder into destination
