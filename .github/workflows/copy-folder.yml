@@ -11,24 +11,24 @@ jobs:
       - name: Checkout destination repo
         uses: actions/checkout@v3
         with:
-          path: dest
+          ref: master   # explicitly use master for gnuton-asuswrt-merlin.ng
 
       - name: Checkout source private repo
         uses: actions/checkout@v3
         with:
           repository: kornbred/asus-tuf-be3600-src
           token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main    # explicitly use main for asus-tuf-be3600-src
           path: src
 
       - name: Copy folder into destination
         run: |
-          mkdir -p dest/release
-          rm -rf dest/release/src-rt-5.04behnd.4916 || true
-          cp -r src/release/src-rt-5.04behnd.4916 dest/release/
+          mkdir -p release
+          rm -rf release/src-rt-5.04behnd.4916 || true
+          cp -r src/release/src-rt-5.04behnd.4916 release/
 
       - name: Commit and push changes
         run: |
-          cd dest
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add release/src-rt-5.04behnd.4916
